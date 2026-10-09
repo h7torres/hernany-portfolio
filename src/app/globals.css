@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  /* Helvetica Neue ships on Macs and iPhones; other devices fall back to Helvetica/Arial. */
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+
+html {
+  background: #ffffff;
+  color: #000000;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+}

@@ -7,9 +7,8 @@ import Clock from "./Clock";
 const links = [
   { href: "/", label: "work" },
   { href: "/projects/", label: "projects" },
-  { href: "/about/", label: "about" },
   { href: "/resume/", label: "resume" },
-  { href: "/contact/", label: "contact" },
+  { href: "/info/", label: "info" }
 ];
 
 function isActive(pathname: string, href: string) {
@@ -21,9 +20,9 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-full px-6 pt-10 md:fixed md:left-[21px] md:top-0 md:z-10 md:w-64 md:px-0 md:pt-2">
+   <aside className="w-full px-6 pt-10 md:fixed md:left-[21px] md:top-0 md:z-10 md:w-[360px] md:px-0 md:pt-2">
       <Link href="/" className="block">
-        <h1 className="text-4xl font-extralight leading-tight">Hernany Torres</h1>
+        <h1 className="text-[length:45px] font-extralight leading-tight">Hernany Torres</h1>
       </Link>
       <p className="mt-2 text-xs leading-snug">
         Product Designer and Full Stack Developer

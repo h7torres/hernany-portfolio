@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getProject, projects } from "@/data/projects";
+import { asset } from "@/lib/asset";
 
 // Pre-builds one page per project so the site works as static files.
 export function generateStaticParams() {
@@ -20,8 +21,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <div className="mt-6 aspect-[956/453] w-full overflow-hidden border border-black bg-white">
         {project.image && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={project.image} alt={project.title} className="h-full w-full object-cover" />
-        )}
+            <img src={asset(project.image)} alt={project.title} className="h-full w-full object-cover" />        )}
       </div>
 
       <p className="mt-6 max-w-xl text-base leading-relaxed">{project.summary}</p>

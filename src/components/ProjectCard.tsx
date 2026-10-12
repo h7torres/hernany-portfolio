@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Project } from "@/data/projects";
+import { asset } from "@/lib/asset";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
@@ -9,7 +10,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         {project.image && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={project.image}
+            src={asset(project.image)}
             alt={project.title}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
           />

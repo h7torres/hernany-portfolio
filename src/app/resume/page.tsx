@@ -17,7 +17,7 @@ const experience: Entry[] = [
     title: "Computer Engineer / Web Developer",
     org: "KSDT Radio",
     place: "UCSD",
-    dates: "Sep 2026 – Present",
+    dates: "May 2026 – Present",
     points: [
       "- develop the station’s website with a student dev team using Next.js and TypeScript, collaborating through GitHub",
       "- build pages from shared figma designs, translating UI mockups into responsive components",

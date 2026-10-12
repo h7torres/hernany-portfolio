@@ -8,8 +8,7 @@ const links = [
   { href: "/", label: "work" },
   { href: "/projects/", label: "projects" },
   { href: "/resume/", label: "resume" },
-  { href: "/info/", label: "info" }
-  
+  { href: "/info/", label: "info" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -19,9 +18,11 @@ function isActive(pathname: string, href: string) {
 
 export default function Sidebar() {
   const pathname = usePathname();
+  // True on a single project's page, like /projects/ksdt-radio/
+  const onProjectPage = /^\/projects\/[^/]+/.test(pathname);
 
   return (
-   <aside className="w-full px-6 pt-10 md:fixed md:left-[21px] md:top-0 md:z-10 md:w-[360px] md:px-0 md:pt-2">
+    <aside className="w-full px-6 pt-10 md:fixed md:left-[21px] md:top-0 md:z-10 md:w-[360px] md:px-0 md:pt-2">
       <Link href="/" className="block">
         <h1 className="text-[length:45px] font-extralight leading-tight">Hernany Torres</h1>
       </Link>
@@ -45,6 +46,11 @@ export default function Sidebar() {
             {label}
           </Link>
         ))}
+        {onProjectPage && (
+          <Link href="/" className="text-neutral-400 underline underline-offset-2 hover:text-black">
+            ← back
+          </Link>
+        )}
       </nav>
 
       <hr className="mt-5 border-zinc-300 md:w-56" />

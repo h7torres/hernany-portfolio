@@ -9,6 +9,7 @@ const links = [
   { href: "/projects/", label: "projects" },
   { href: "/resume/", label: "resume" },
   { href: "/info/", label: "info" }
+  
 ];
 
 function isActive(pathname: string, href: string) {

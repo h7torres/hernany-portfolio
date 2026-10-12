@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
 
         <footer className="flex h-7 items-center justify-end border border-black/60 px-6">
-          <p className="font-serif text-sm text-zinc-300 md:text-base">
+          <p className="font-serif text-xs text-zinc-300">
             designed and built from scratch
           </p>
         </footer>

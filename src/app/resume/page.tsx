@@ -19,8 +19,8 @@ const experience: Entry[] = [
     place: "UCSD",
     dates: "Sep 2026 – Present",
     points: [
-      "Develop the station’s website with a student dev team using Next.js and TypeScript, collaborating through GitHub",
-      "Build pages from shared Figma designs, translating UI mockups into responsive components",
+      "- develop the station’s website with a student dev team using Next.js and TypeScript, collaborating through GitHub",
+      "- build pages from shared figma designs, translating UI mockups into responsive components",
     ],
   },
   {
@@ -29,9 +29,9 @@ const experience: Entry[] = [
     place: "UCSD",
     dates: "Sep 2025 – Jan 2026",
     points: [
-      "Managed a design team focused on UI/UX innovation for The Nature Conservancy",
-      "Set project goals, aligning design and research efforts toward measurable impact",
-      "Led team meetings, set deadlines, and coordinated communication among designers",
+      "- managed a design team focused on UI/UX innovation for The Nature Conservancy",
+      "- set project goals, aligning design and research efforts toward measurable impact",
+      "- led team meetings, set deadlines, and coordinated communication among designers",
     ],
   },
   {
@@ -40,8 +40,8 @@ const experience: Entry[] = [
     place: "UCSD",
     dates: "Sep 2025 – Dec 2025",
     points: [
-      "Analyzed English and Spanish audio stimuli to collect and code linguistic data",
-      "Contributed to data quality control and organization in Excel",
+      "- analyzed English and Spanish audio stimuli to collect and code linguistic data",
+      "- contributed to data quality control and organization in Excel",
     ],
   },
   {
@@ -50,8 +50,8 @@ const experience: Entry[] = [
     place: "SDSU",
     dates: "Jun 2024 – Oct 2024",
     points: [
-      "Designed and developed an Android app with post-doctoral EEs to track and visualize research data",
-      "Built features in Kotlin and ran design iterations and usability testing with engineering researchers",
+      "- designed and developed an Android app with post-doctoral EEs to track and visualize research data",
+      "- built features in Kotlin and ran design iterations and usability testing with engineering researchers",
     ],
   },
   {
@@ -59,9 +59,9 @@ const experience: Entry[] = [
     org: "Vintage Clothing Seller",
     dates: "Aug 2020 – Present",
     points: [
-      "Source, price, and curate vintage inventory based on resale and seasonal market research",
-      "Plan and manage pop-up events, vendor collaborations, and logistics",
-      "Photograph products and edit images to maintain a consistent visual brand",
+      "- source, price, and curate vintage inventory based on resale and seasonal market research",
+      "- plan and manage pop-up events, vendor collaborations, and logistics",
+      "- photograph products and edit images to maintain a consistent visual brand",
     ],
   },
 ];
@@ -72,16 +72,16 @@ const projects: Entry[] = [
     org: "San Ysidro Archive",
     dates: "Jun 2026 – Present",
     points: [
-      "Designed and built a community history site with a photo library, collections, and video profiles",
-      "Curated and organized archival data, artifacts, and documents",
-      "Built an image compression pipeline and fixed SPA routing issues to improve load performance",
+      "- designed and built a community history site with a photo library, collections, and video profiles",
+      "- curated and organized archival data, artifacts, and documents",
+      "- built an image compression pipeline and fixed SPA routing issues to improve load performance",
     ],
   },
 ];
 
 const work: Entry[] = [
   { title: "Barista", org: "Starbucks", dates: "Apr 2026 – Present" },
-  { title: "Retail Sales Associate", org: "PacSun", dates: "Nov 2025 – May 2026" },
+  //{ title: "Retail Sales Associate", org: "PacSun", dates: "Nov 2025 – May 2026" },
   { title: "Associate", org: "In-N-Out", dates: "Sep 2022 – Apr 2024" },
 ];
 
@@ -100,14 +100,21 @@ const education: Entry[] = [
 
 const skills = [
   {
+    label: "research",
+    items: "usability testing, user interviews, qualitative data coding, synthesis, information architecture",
+  },
+  {
     label: "design",
-    items: "Figma, Framer, Photoshop, Illustrator, Lightroom, InDesign, Canva, Notion, WordPress",
+    items: "wireframing, prototyping, responsive ui design, visual design",
+  },
+  {
+    label: "tools",
+    items: "figma, framer, photoshop, illustrator, lightroom, indesign, notion",
   },
   {
     label: "development",
-    items: "React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML, Vite, Git/GitHub, Kotlin, MongoDB",
+    items: "react, next.js, typescript, javascript, tailwind css, html, git/github, kotlin, mongodb",
   },
-  { label: "other", items: "Excel, Google Sheets, Analytics" },
   { label: "languages", items: "English and Spanish (bilingual)" },
 ];
 
@@ -147,7 +154,7 @@ function Item({ entry }: { entry: Entry }) {
 
 export default function ResumePage() {
   return (
-    <section className="mx-auto max-w-2xl md:pt-12">
+    <section>
       <a
         href={PDF_URL}
         target="_blank"
@@ -156,7 +163,23 @@ export default function ResumePage() {
       >
         download pdf ↗
       </a>
+        <Section label="education">
+        {education.map((e) => (
+          <Item key={e.org} entry={e} />
+        ))}
+      </Section>  
 
+    <Section label="skills">
+        <dl className="space-y-3 text-sm leading-relaxed">
+          {skills.map(({ label, items }) => (
+            <div key={label} className="grid gap-1 sm:grid-cols-[110px_1fr]">
+              <dt className="text-xs text-neutral-400">{label}</dt>
+              <dd>{items}</dd>
+            </div>
+          ))}
+        </dl>
+      </Section>
+      
       <Section label="experience">
         {experience.map((e) => (
           <Item key={e.org} entry={e} />
@@ -169,11 +192,7 @@ export default function ResumePage() {
         ))}
       </Section>
 
-      <Section label="education">
-        {education.map((e) => (
-          <Item key={e.org} entry={e} />
-        ))}
-      </Section>
+
 
       <Section label="work">
         {work.map((e) => (
@@ -181,16 +200,7 @@ export default function ResumePage() {
         ))}
       </Section>
 
-      <Section label="skills">
-        <dl className="space-y-3 text-sm leading-relaxed">
-          {skills.map(({ label, items }) => (
-            <div key={label} className="grid gap-1 sm:grid-cols-[110px_1fr]">
-              <dt className="text-xs text-neutral-400">{label}</dt>
-              <dd>{items}</dd>
-            </div>
-          ))}
-        </dl>
-      </Section>
+      
     </section>
   );
 }

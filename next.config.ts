@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
-// The live site lives at h7torres.github.io/hernany-portfolio, so it needs this prefix.
-// Locally (npm run dev) it's left empty so the site runs at plain localhost:3000.
-const basePath = process.env.NODE_ENV === "production" ? "/hernany-portfolio" : "";
+// The site lives at the root of its domain, so there's no prefix.
+const basePath = "";
 
 const nextConfig: NextConfig = {
   output: "export",

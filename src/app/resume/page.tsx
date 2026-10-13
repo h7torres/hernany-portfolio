@@ -2,7 +2,7 @@ export const metadata = { title: "Resume — Hernany Torres" };
 
 // Put your PDF at public/resume.pdf. Files in public/ don't get the basePath added
 // automatically, so the repo name is included here. Remove it if you drop basePath.
-const PDF_URL = "/hernany-portfolio/resume.pdf";
+const PDF_URL = "/resume.pdf";
 
 type Entry = {
   title: string;

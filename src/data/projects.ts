@@ -45,16 +45,19 @@ export const projects: Project[] = [
     gallery: [{ src: "/projects/ksdt-page1.png" }],
     featured: true,
   },
-  /*
   {
-    slug: "project-three",
-    title: "Title of Project",
-    summary: "One or two sentences about what this project is and what you did.",
-    role: "Design + Development",
-    year: "2026",
+    slug: "galeria-de-home",
+    title: "Galeria De HOMÈ",
+    summary:
+      "A San Diego art and clothing brand where I lead brand direction, keeping the look and voice consistent across the website, Instagram, and the clothing itself. I help take pieces like screen-printed trucker hats from design to production, and run the brand's Instagram. I also rebuilt galeriadehome.com as a standalone React, Vite, and Tailwind site for videos, the GDH Arts Magazine, a photo gallery, and About, with Shopify still handling the shop and checkout.",
+    year: "2025",
+    link:"https://galeriadehome.com/",
+    // Add screenshots to /public/projects/ and uncomment:
+    // image: "/projects/gdh.png",
+    // gallery: [{ src: "/projects/gdh1.png" }],
     featured: true,
   },
-  */
+  
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);

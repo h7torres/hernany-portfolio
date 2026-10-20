@@ -53,8 +53,8 @@ export const projects: Project[] = [
     year: "2025",
     link:"https://galeriadehome.com/",
     // Add screenshots to /public/projects/ and uncomment:
-    // image: "/projects/gdh.png",
-    // gallery: [{ src: "/projects/gdh1.png" }],
+    image: "/projects/home1.png",
+    gallery: [{ src: "/projects/home1.png" },{ src: "/projects/home2.png" }, { src: "/projects/home3.png" }],
     featured: true,
   },
   

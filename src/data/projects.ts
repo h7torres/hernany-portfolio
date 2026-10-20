@@ -37,9 +37,7 @@ export const projects: Project[] = [
     slug: "ksdt-radio",
     title: "KSDT Radio",
     summary:
-      "The new website for UCSD's student radio station, built with a student dev team in Next.js and TypeScript. I'm building the News, Get Involved, and About pages from the team's Figma designs, for both mobile and desktop, and connecting them to the station's content in Sanity.",
-    role: "Web Developer",
-    year: "2026",
+      "The new website for KSDT, UCSD’s student radio station, built with a student dev team using Next.js and TypeScript. I worked closely with designers to translate their Figma designs into responsive pages for mobile and desktop. From there, we integrated Sanity CMS for content and embedded the Radio.co live stream, creating a fully functional radio site for the UCSD community to tune in.",
     image: "/projects/ksdt-page.png",
     link: "https://ksdtradio.org/",
     gallery: [{ src: "/projects/ksdt-page1.png" }],

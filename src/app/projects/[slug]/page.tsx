@@ -24,13 +24,22 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           href={project.link}
           target="_blank"
           rel="noreferrer"
-          className="mt-4 inline-block text-sm underline underline-offset-2 hover:text-neutral-500"
+          className="mt-2 inline-block text-sm underline underline-offset-2 hover:text-neutral-500"
         >
           {project.link.replace(/^https?:\/\//, "").replace(/\/$/, "")}
         </a>
       )}
 
-      <p className="mt-6 text-base leading-relaxed">{project.summary}</p>
+        {project.description ? (
+        <div className="mt-8 space-y-4">
+          {project.description.map((p, i) => (
+            <p key={i} className="leading-relaxed">{p}</p>
+          ))}
+        </div>
+      ) : (
+        <p className="mt-8 leading-relaxed">{project.summary}</p>
+      )}
+      
 
       {(project.role || project.year) && (
         <p className="mt-3 text-xs text-neutral-400">
